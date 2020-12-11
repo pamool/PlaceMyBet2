@@ -22,5 +22,20 @@ namespace PlaceMyBet4.Models
             context.Evento.Add(e);
             context.SaveChanges();
         }
+        internal void Update(int id,string equipoLocal, string equipoVisitante)
+        {
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            Evento evento = context.Evento.FirstOrDefault(a => a.EventoId == id);
+            evento.EquipoLocal = equipoLocal;
+            evento.EquipoVisitante = equipoVisitante;
+            context.SaveChanges();
+        }
+        internal void Eliminar(int id)
+        {
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            Evento evento = context.Evento.FirstOrDefault(a => a.EventoId == id);
+            context.Remove(evento);
+            context.SaveChanges();
+        }
     }
 }

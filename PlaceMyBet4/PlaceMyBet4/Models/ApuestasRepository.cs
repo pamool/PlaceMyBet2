@@ -56,5 +56,16 @@ namespace PlaceMyBet4.Models
             context.SaveChanges();
         }
 
+        public static ApuestaDTO ToDTO(Apuesta a)
+        {
+            return new ApuestaDTO(a.UsuarioId,a.EventoId,a.Cuota,a.tipoApuesta,a.DineroApuesta);
+        }
+        public List<ApuestaDTO> RetrieveDTO()
+        {
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            List<ApuestaDTO> apuestaDTOs = context.Apuesta.Select(a => ToDTO(a)).ToList();
+            return apuestaDTOs;
+        }
+
     }
 }
