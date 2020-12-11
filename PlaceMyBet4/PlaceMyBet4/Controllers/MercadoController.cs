@@ -28,8 +28,10 @@ namespace PlaceMyBet4.Controllers
         }
 
         // POST: api/Mercado
-        public void Post([FromBody]string value)
+        public void Post([FromBody] Mercado m)
         {
+            var repo = new MercadosRepository();
+            repo.Save(m);
         }
 
         // PUT: api/Mercado/5
