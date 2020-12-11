@@ -20,9 +20,11 @@ namespace PlaceMyBet4.Controllers
 
 
         // GET: api/Apuestas/5
-        public string Get(int id)
+        public Apuesta Get(int id)
         {
-            return "value";
+            var repo = new ApuestasRepository();
+            Apuesta apuesta = repo.RetrieveId(id);
+            return apuesta;
         }
 
         // POST: api/Apuestas
