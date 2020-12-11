@@ -16,5 +16,11 @@ namespace PlaceMyBet4.Models
             }
             return eventos;
         }
+        internal void Save(Evento e)
+        {
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            context.Evento.Add(e);
+            context.SaveChanges();
+        }
     }
 }

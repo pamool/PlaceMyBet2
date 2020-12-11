@@ -12,7 +12,7 @@ namespace PlaceMyBet4.Models
         public string EquipoVisitante { get; set; }
         public DateTime Fecha { get; set; }
 
-        List<Mercado> mercados { get; set; }
+        public List<Mercado> mercados { get; set; }
 
         public Evento(int eventoId, string equipoLocal, string equipoVisitante, DateTime fecha)
         {

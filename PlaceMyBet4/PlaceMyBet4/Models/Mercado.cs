@@ -19,7 +19,7 @@ namespace PlaceMyBet4.Models
 
         public Evento evento { get; set; }
         //un mercado guarda muchas apuestas
-        List<Apuesta> apuestas { get; set; }
+        public List<Apuesta> apuestas { get; set; }
 
         public Mercado(int mercadoId, double overUnder, double cuotaOver, double cuotaUnder, double dineroOver, double dineroUnder, int eventoId)
         {
