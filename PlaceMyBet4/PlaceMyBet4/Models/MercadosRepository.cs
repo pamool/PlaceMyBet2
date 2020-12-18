@@ -10,6 +10,7 @@ namespace PlaceMyBet4.Models
     {
         internal List<Mercado> Retrieve()
         {
+
             List<Mercado> mercados = new List<Mercado>();
             using (PlaceMyBetContext context = new PlaceMyBetContext())
             {

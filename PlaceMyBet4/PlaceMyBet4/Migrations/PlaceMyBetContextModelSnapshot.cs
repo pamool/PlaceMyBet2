@@ -62,7 +62,7 @@ namespace PlaceMyBet4.Migrations
                             Cuota = 1.8999999999999999,
                             DineroApuesta = 20.0,
                             EventoId = 1,
-                            Fecha = new DateTime(2020, 12, 11, 13, 29, 3, 32, DateTimeKind.Local).AddTicks(9514),
+                            Fecha = new DateTime(2020, 12, 18, 15, 43, 36, 483, DateTimeKind.Local).AddTicks(6739),
                             MercadoId = 1000,
                             OverUnder = 1.5,
                             UsuarioId = 1,
@@ -127,7 +127,7 @@ namespace PlaceMyBet4.Migrations
                             EventoId = 1,
                             EquipoLocal = "Valencia",
                             EquipoVisitante = "Madrid",
-                            Fecha = new DateTime(2020, 12, 11, 13, 29, 3, 25, DateTimeKind.Local).AddTicks(9696)
+                            Fecha = new DateTime(2020, 12, 18, 15, 43, 36, 479, DateTimeKind.Local).AddTicks(6847)
                         });
                 });
 
@@ -206,7 +206,7 @@ namespace PlaceMyBet4.Migrations
             modelBuilder.Entity("PlaceMyBet4.Models.Apuesta", b =>
                 {
                     b.HasOne("PlaceMyBet4.Models.Mercado", "mercado")
-                        .WithMany()
+                        .WithMany("apuestas")
                         .HasForeignKey("MercadoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -230,7 +230,7 @@ namespace PlaceMyBet4.Migrations
             modelBuilder.Entity("PlaceMyBet4.Models.Mercado", b =>
                 {
                     b.HasOne("PlaceMyBet4.Models.Evento", "evento")
-                        .WithMany()
+                        .WithMany("mercados")
                         .HasForeignKey("EventoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

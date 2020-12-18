@@ -14,6 +14,7 @@ namespace PlaceMyBet4.Models
         public double DineroOver { get; set; }
         public double DineroUnder { get; set; }
 
+
         //relacion mercado evento
         public int EventoId { get; set; }
 

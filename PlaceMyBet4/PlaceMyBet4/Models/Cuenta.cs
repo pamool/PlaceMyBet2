@@ -26,6 +26,7 @@ namespace PlaceMyBet4.Models
         }
         public Cuenta() { 
 
+
         }
     }
 }
