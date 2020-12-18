@@ -31,11 +31,18 @@ namespace PlaceMyBet4.Controllers
             return rep.RetrievebyId(id);
         }*/
 
+
         // POST: api/Eventos
-        public void Post([FromBody]Evento e)
+       /* public void Post([FromBody]Evento e)
         {
             var repo = new EventosRepository();
             repo.Save(e);
+        }*/
+       
+        public void Post([FromBody] EventosExamen F)
+        {
+            var repo = new EventosRepository();
+            repo.Save(F);
         }
 
 
