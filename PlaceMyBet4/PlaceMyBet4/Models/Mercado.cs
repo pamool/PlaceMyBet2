@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PlaceMyBet4.Models
 {
-    public class Mercado
+    public class Mercado 
     {
         public int MercadoId { get; set; }
         public double OverUnder { get; set; }
@@ -53,5 +53,5 @@ namespace PlaceMyBet4.Models
         {
 
         }
-    }
+    }   
 }
