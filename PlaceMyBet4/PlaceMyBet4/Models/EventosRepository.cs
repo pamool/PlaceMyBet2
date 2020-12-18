@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,19 +7,19 @@ namespace PlaceMyBet4.Models
 {
     public class EventosRepository
     {
-        internal List<EventosExamen> Retrieve()
+        internal List<Evento> Retrieve()
         {
-            List<EventosExamen> eventos = new List<EventosExamen>();
+            List<Evento> eventos = new List<Evento>();
             using (PlaceMyBetContext context = new PlaceMyBetContext())
             {
-                eventos = context.EventosExamen.ToList();
+                eventos = context.Eventos.ToList();
             }
             return eventos;
         }
-        internal void Save(EventosExamen F)
+        internal void Save(Evento F)
         {
             PlaceMyBetContext context = new PlaceMyBetContext();
-            context.EventosExamen.Add(F);
+            context.Eventos.Add(F);
             context.SaveChanges();
         }
         /*
@@ -34,7 +33,7 @@ namespace PlaceMyBet4.Models
         internal void Update(int id, string equipoLocal, string equipoVisitante)
         {
             PlaceMyBetContext context = new PlaceMyBetContext();
-            EventosExamen evento = context.Evento.FirstOrDefault(a => a.EventoId == id);
+            Evento evento = context.Eventos.FirstOrDefault(a => a.EventoId == id);
             evento.EquipoLocal = equipoLocal;
             evento.EquipoVisitante = equipoVisitante;
             context.SaveChanges();
@@ -42,7 +41,7 @@ namespace PlaceMyBet4.Models
         internal void Eliminar(int id)
         {
             PlaceMyBetContext context = new PlaceMyBetContext();
-            Evento evento = context.Evento.FirstOrDefault(a => a.EventoId == id);
+            Evento evento = context.Eventos.FirstOrDefault(a => a.EventoId == id);
             context.Remove(evento);
             context.SaveChanges();
         }

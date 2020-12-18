@@ -33,18 +33,19 @@ namespace PlaceMyBet4.Controllers
 
 
         // POST: api/Eventos
-       /* public void Post([FromBody]Evento e)
+        public void Post([FromBody]Evento e)
         {
             var repo = new EventosRepository();
             repo.Save(e);
-        }*/
+        }
        
+        /* Intento de ejercicio 2
         public void Post([FromBody] EventosExamen F)
         {
             var repo = new EventosRepository();
             repo.Save(F);
         }
-
+        */
 
         // PUT: api/Eventos/5
         public void Put(int id,string equipoLocal,string equipoVisitante)

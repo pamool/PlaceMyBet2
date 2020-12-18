@@ -8,9 +8,8 @@ namespace PlaceMyBet4.Models
 {
     public class PlaceMyBetContext : DbContext
     {
-        internal object EventosExamen;
 
-        public DbSet<Evento> Evento { get; set; } //Taula
+        public DbSet<Evento> Eventos { get; set; } //Taula
         public DbSet<Mercado> Mercado { get; set; } //Taula
         public DbSet<Apuesta> Apuesta { get; set; } //Taula
         public DbSet<Usuario> Usuario { get; set; } //Taula
