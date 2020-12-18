@@ -37,5 +37,31 @@ namespace PlaceMyBet4.Models
             context.Remove(evento);
             context.SaveChanges();
         }
+
+        internal List<EventoDTO> RetrievebyId(int id)
+        {
+            List<Evento> lista;
+            List<EventoDTO> final = new List<EventoDTO>();
+            using (PlaceMyBetContext context = new PlaceMyBetContext())
+            {
+                lista = context.Evento.Where(e => e.EventoId == id).ToList();
+            }
+            for (int i = 0; i < lista.Count; i++)
+            {
+                final.Add(toDTO(lista[i]));
+            }
+            return final;
+        }
+        static public EventoDTO toDTO(Evento e)
+        {
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            Mercado m;
+            using (context)
+            {
+                m = context.Mercado.Single(c => c.MercadoId == e.MercadoId);
+
+            }
+            return new EventoDTO(e.EquipoVisitante,m.MercadoId,m.CuotaOver,m.CuotaUnder);
+        }
     }
 }

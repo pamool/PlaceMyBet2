@@ -23,6 +23,13 @@ namespace PlaceMyBet4.Controllers
         {
             return "value";
         }
+        /*
+        [Route("api/Eventos/{id}")]
+        public List<EventoDTO> Get(int id)
+        {
+            EventosRepository rep = new EventosRepository();
+            return rep.RetrievebyId(id);
+        }*/
 
         // POST: api/Eventos
         public void Post([FromBody]Evento e)
@@ -30,6 +37,7 @@ namespace PlaceMyBet4.Controllers
             var repo = new EventosRepository();
             repo.Save(e);
         }
+
 
         // PUT: api/Eventos/5
         public void Put(int id,string equipoLocal,string equipoVisitante)

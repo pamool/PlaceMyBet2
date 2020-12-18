@@ -17,7 +17,6 @@ namespace PlaceMyBet4.Models
 
         //relacion mercado evento
         public int EventoId { get; set; }
-
         public Evento evento { get; set; }
         //un mercado guarda muchas apuestas
         public List<Apuesta> apuestas { get; set; }
