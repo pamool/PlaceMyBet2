@@ -23,7 +23,14 @@ namespace PlaceMyBet4.Controllers
         {
             return "value";
         }
-
+        /**Ejercicio1**/
+        public IEnumerable<Evento> Get(string EquipoLocal)
+        {
+            var repo = new EventosRepository();
+            List<EventoApuesta> eventos = repo.eventoApuesta(EquipoLocal);
+            return eventos;
+        }
+        /**Fin Ejercicio1**/
         // POST: api/Eventos
         public void Post([FromBody]Evento e)
         {

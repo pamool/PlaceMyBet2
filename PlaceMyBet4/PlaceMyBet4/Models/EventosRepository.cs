@@ -22,5 +22,16 @@ namespace PlaceMyBet4.Models
             context.Evento.Add(e);
             context.SaveChanges();
         }
+        /**Ejercicio 1**/
+        internal EventoApuesta eventoApuesta(string EquipoLocal)
+        {
+            using (PlaceMyBetContext context = new PlaceMyBetContext())
+            {
+                var apuesta = context.Evento.FirstOrDefault(e => e.EquipoLocal == EquipoLocal);
+                return apuesta;
+            }
+
+        }
+        /**Fin Ejercicio 1**/
     }
 }
